@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="page-title mb-4">Watchlist</h2>
+    <ul class="list-group">
+    {% for l in listing %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'listing' l.id %}">{{ l.title }}</a>
+            <form action="{% url 'remove' %}" method="post" class="mb-0">
+                {% csrf_token %}
+                <button type="submit" value="{{l.id}}" name="id" class="btn btn-sm btn-outline-danger">Remove</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

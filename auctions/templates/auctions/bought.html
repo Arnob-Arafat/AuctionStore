@@ -1,0 +1,10 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="page-title mb-4">Bought!</h2>
+    <div class="list-group">
+    {% for l in owned %}
+        <a href="{% url 'listing' l.id %}" class="list-group-item list-group-item-action">{{ l.title }}</a>
+    {% endfor %}
+    </div>
+{% endblock %}

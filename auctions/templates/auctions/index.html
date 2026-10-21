@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="page-title mb-4">Active Listings</h2>
+    <div class="row">
+    {% for l in listing %}
+        {% if l.sold == False %}
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{l.image}}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/17003/17003579.png';" class="card-img-top listing-img">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">
+                            <a href="{% url 'listing' l.id %}" class="stretched-link text-dark">{{ l.title }}</a>
+                        </h5>
+                        <p class="card-text text-muted">{{ l.description }}</p>
+                        <div class="price mt-auto">{{ l.bidding }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
