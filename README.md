@@ -48,6 +48,8 @@ Then open <http://127.0.0.1:8000/> in your browser and register an account.
 To use the Django admin, create a superuser with `python manage.py createsuperuser` and visit `/admin`.
 
 ---
+## Demo Video
+[![Watch the demo](https://img.youtube.com/vi/XB9h76ytXIE/maxresdefault.jpg)](https://youtu.be/XB9h76ytXIE)
 
 ## Project Structure
 
